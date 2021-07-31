@@ -1,0 +1,21 @@
+{
+    "name": "instagram-dark-mode",
+    "description": "Let instagram in darkmode",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.instagram.com/*"],
+            "js": ["src/instagram/instagram.js"]
+        }
+    ],
+    "permissions": ["storage", "activeTab", "scripting", "tabs", "webRequest", "declarativeNetRequest"],
+    "action": {
+        "default_popup": "src/popup/popup.html"
+    },
+    "options_page": "src/options/options.html",
+    "host_permissions": ["https://www.instagram.com/*", "https://instagram.com/*"]
+}

@@ -56,10 +56,8 @@ const mappedTheme = {
             chrome.tabs.update(tab.id, { url });
         }
     },
-    false: (isDark, tab) => {
-        if (isDark) {
-            const url = tab.url.replace(urlDark, "");
-            chrome.tabs.update(tab.id, { url });
-        }
+    false: (isDark = false, tab) => {
+        const url = tab.url.replace(urlDark, "");
+        chrome.tabs.update(tab.id, { url });
     },
 };

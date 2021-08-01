@@ -1,5 +1,5 @@
 {
-    "name": "instagram-dark-mode",
+    "name": "Instagram Dark Mode",
     "description": "Let instagram in darkmode",
     "version": "1.0",
     "manifest_version": 3,
@@ -8,14 +8,15 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://*.instagram.com/*"],
-            "js": ["src/instagram/instagram.js"]
+            "matches": ["*://*.instagram.com/*"],
+            "js": ["src/popup/popup.js"],
+            "css": ["src/assets/main.css"]
         }
     ],
-    "permissions": ["storage", "activeTab", "scripting", "tabs", "webRequest", "declarativeNetRequest"],
+    "permissions": ["storage", "activeTab", "scripting", "tabs", "webRequest", "webNavigation"],
     "action": {
-        "default_popup": "src/popup/popup.html"
+        "default_popup": "src/popup/popup.html",
+        "default_icon": "src/assets/img/logo.png"
     },
-    "options_page": "src/options/options.html",
     "host_permissions": ["https://www.instagram.com/*", "https://instagram.com/*"]
 }
